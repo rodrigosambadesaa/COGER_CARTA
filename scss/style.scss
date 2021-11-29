@@ -9,6 +9,7 @@ body {
   font-size: $size;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
+  background-color: #2d4e20;
 }
 
 
@@ -17,149 +18,11 @@ h1 {
   font-size: 1.7em;
   line-height: 1.8em;
   text-align: center;
+  color:white;
+  text-shadow: 0 .5em .5em black;
 }
 
-.baraja{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  div{
-    flex-basis: 154px;
-    height: 254px;
-    background-color: tomato;
-    background-image: url(../img/corazones.jpg);
-    background-position: -20px -16px;
-    &[class^=corazones]{
-      background-image: url(../img/corazones.jpg);
-    }
-    &[class^=diamantes]{
-      background-image: url(../img/diamantes.jpg);
-    }
-    &[class^=picas]{
-      background-image: url(../img/picas.jpg);
-    }
-    &.corazones-1{
-      background-position: -20px -16px;
-    }
-    &.corazones-2{
-      background-position: -187px -16px;
-    }
-    &.corazones-3{
-      background-position: -356px -16px;
-    }
-    &.corazones-4{
-      background-position: -523px -16px;
-    }
-    &.corazones-5{
-      background-position: -692px -16px;
-    }
-    &.corazones-6{
-      background-position: -856px -16px;
-    }
-    &.corazones-7{
-      background-position: -1027px -16px;
-    }
-    &.corazones-8{
-      background-position: -20px -281px;
-    }
-    &.corazones-9{
-      background-position: -187px -281px;
-    }
-    &.corazones-10{
-      background-position: -356px -281px;
-    }
-    &.corazones-11{
-      background-position: -523px -281px;
-    }
-    &.corazones-12{
-      background-position: -692px -281px;
-    }
-    &.corazones-13{
-      background-position: -856px -281px;
-    }
-    &.reverso{
-      background-position: -1024px -281px;
-    }
-    &.diamantes-1{
-      background-position: -20px -16px;
-    }
-    &.diamantes-2{
-      background-position: -187px -16px;
-    }
-    &.diamantes-3{
-      background-position: -356px -16px;
-    }
-    &.diamantes-4{
-      background-position: -523px -16px;
-    }
-    &.diamantes-5{
-      background-position: -692px -16px;
-    }
-    &.diamantes-6{
-      background-position: -856px -16px;
-    }
-    &.diamantes-7{
-      background-position: -1027px -16px;
-    }
-    &.diamantes-8{
-      background-position: -20px -281px;
-    }
-    &.diamantes-9{
-      background-position: -187px -281px;
-    }
-    &.diamantes-10{
-      background-position: -356px -281px;
-    }
-    &.diamantes-11{
-      background-position: -523px -281px;
-    }
-    &.diamantes-12{
-      background-position: -692px -281px;
-    }
-    &.diamantes-13{
-      background-position: -856px -281px;
-    }
-    &.picas-1{
-      background-position: -20px -16px;
-    }
-    &.picas-2{
-      background-position: -187px -16px;
-    }
-    &.picas-3{
-      background-position: -356px -16px;
-    }
-    &.picas-4{
-      background-position: -523px -16px;
-    }
-    &.picas-5{
-      background-position: -692px -16px;
-    }
-    &.picas-6{
-      background-position: -856px -16px;
-    }
-    &.picas-7{
-      background-position: -1027px -16px;
-    }
-    &.picas-8{
-      background-position: -20px -281px;
-    }
-    &.picas-9{
-      background-position: -187px -281px;
-    }
-    &.picas-10{
-      background-position: -356px -281px;
-    }
-    &.picas-11{
-      background-position: -523px -281px;
-    }
-    &.picas-12{
-      background-position: -692px -281px;
-    }
-    &.picas-13{
-      background-position: -856px -281px;
-    }
-  }
-}
+
 
 @media all and (max-width: 1000px) {
   h1 { 

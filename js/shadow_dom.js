@@ -1,34 +1,74 @@
-// const seleccionCarta = (e) => {
-//     //console.log(e.target.dataset.id);
-//     const target = baraja.findIndex(
-//         element => {
-//             return element === e.target.dataset.id;
-//         }
-//     );
-//     baraja.splice(target,1);
-//     e.target.parentElement.removeChild(e.target);
-//     console.log(baraja);
-   
-// }
+let parejas=[];
+let contador = 0;
 
+const comparar = (carta1,carta2) => {
+    const c1 = Number(carta1.dataset.id.match(/\d+/).join(""));
+    const c2 = Number(carta2.dataset.id.match(/\d+/).join(""));
+    if(c1===c2){
+        const padre = carta1.parentElement;
+        if(carta1 && carta2){
+        padre.removeChild(carta1);
+        padre.removeChild(carta2);
+        }
+    }
+    carta1.classList.add("reverso");
+    carta2.classList.add("reverso");
+    parejas = [];
+}
 const seleccionCarta = (e) => {
     //console.log(e.target.dataset.id);
     const padre = e.target.parentElement;
     const hijo = e.target;
-    const target = baraja.findIndex(
-        element => {
-            return element === e.target.dataset.id;
+    if(parejas.length<2){
+        const hayado = parejas.includes(e.target
+        );
+        console.log(hayado)
+        if(!hayado){
+            parejas.push(e.target);
+            e.target.classList.remove("reverso");
         }
-    );
-    e.target.classList.remove("reverso");
-    setTimeout(
-        () => {
-            baraja.splice(target,1);
-            padre.removeChild(hijo);
-            console.log(e.target)
-            console.log(baraja);
-        },
-        1500
-    );
+
+        if(parejas.length===2){
+            //console.log(parejas)
+            const [carta1,carta2] = parejas;
+            setTimeout(
+                ()=>{
+                    comparar(carta1,carta2);
+                },
+                2000
+            );
+            
+        }
+    }
+    
+    
+    
+        
+    
+    // //Evitamos que el nodo exista
+    // const found = parejas.find(element => element === e.target);
+    // if(!found && parejas.length<2){
+    //     parejas.push(e.target);        
+    // }
+    // if(contador<2){
+    //     e.target.classList.remove("reverso"); //Evitamos cargar otra carta
+    //     contador++;
+    //     if(parejas.length===2){
+    //         const [carta1,carta2] = parejas
+    //         comparar(carta1,carta2);
+    //         //reiniciamos
+            
+    //     }
+    // }
+    //console.log(parejas)
+    // setTimeout(
+    //     () => {
+    //         baraja.splice(target,1);
+    //         padre.removeChild(hijo);
+    //         console.log(e.target)
+    //         console.log(baraja);
+    //     },
+    //     1500
+    // );
    
 }
