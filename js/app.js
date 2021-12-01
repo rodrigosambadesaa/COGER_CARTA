@@ -33,23 +33,10 @@ const cargarCartas = () => {
             baraja.push(carta);
         }
     }
-    //barajamos
-    barajarCartas();
+    //barajamos las cartas
+    //Recordar sort: -1 a,b; +1 b,a; 0 a y b como estaban
+    baraja.sort(()=>Math.random()-0.5);
 }
-
-/**
- * Función que baraja el array de cartas
- */
-const barajarCartas = () => {
-    
-    for(let i = 0, tam = baraja.length*5; i < tam; i++){
-        const x = Math.floor(Math.random()*baraja.length); //indice aleatorio del 0 al 11;
-        const z = Math.floor(Math.random()*baraja.length); //indice aleatorio del 0 al 11;
-        //desestructuración
-        [baraja[x],baraja[z]] = [baraja[z],baraja[x]];
-    }
-}
-
 
 
 /**
@@ -75,7 +62,7 @@ const pintarCartas = () => {
         c.setAttribute("data-id",carta);
         c.classList.add(carta);
         c.classList.add('reverso');
-        c.innerHTML = carta;
+        //c.innerHTML = carta;
         c.onclick = (e) => {
             seleccionCarta(e);
         }

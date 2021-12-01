@@ -39,36 +39,5 @@ const seleccionCarta = (e) => {
             );
             
         }
-    }
-    
-    
-    
-        
-    
-    // //Evitamos que el nodo exista
-    // const found = parejas.find(element => element === e.target);
-    // if(!found && parejas.length<2){
-    //     parejas.push(e.target);        
-    // }
-    // if(contador<2){
-    //     e.target.classList.remove("reverso"); //Evitamos cargar otra carta
-    //     contador++;
-    //     if(parejas.length===2){
-    //         const [carta1,carta2] = parejas
-    //         comparar(carta1,carta2);
-    //         //reiniciamos
-            
-    //     }
-    // }
-    //console.log(parejas)
-    // setTimeout(
-    //     () => {
-    //         baraja.splice(target,1);
-    //         padre.removeChild(hijo);
-    //         console.log(e.target)
-    //         console.log(baraja);
-    //     },
-    //     1500
-    // );
-   
+    }   
 }
