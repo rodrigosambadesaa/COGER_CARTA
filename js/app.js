@@ -1,7 +1,7 @@
 "use strict";
 
 
-const shadow_dom = document.querySelector(".shadow-dom"); //Nodo/contenedor del dom donde cargaremos las cartas 
+const shadow_dom = document.querySelector(".shadow-dom"); // Nodo/contenedor del dom donde cargaremos las cartas 
 
 
 
@@ -21,7 +21,7 @@ const getPropertyValue = (element, property) => {
 //Faltan treboles
 //Funciones
 //const palos = ["treboles", "diamantes", "picas", "corazones"]; //palos de una baraja
-const palos = ["corazones","diamantes"];
+const palos = ["corazones", "diamantes"];
 const baraja = []; //array donde cargaremos los palor se una baraja
 /**
  * Función que carga las cartas de una baraja
@@ -35,7 +35,7 @@ const cargarCartas = () => {
     }
     //barajamos las cartas
     //Recordar sort: -1 a,b; +1 b,a; 0 a y b como estaban
-    baraja.sort(()=>Math.random()-0.5);
+    baraja.sort(() => Math.random() - 0.5);
 }
 
 
@@ -43,7 +43,7 @@ const cargarCartas = () => {
  * Función que nos pinta la carta también meteremos los eventos
  */
 const pintarCartas = () => {
-    const shadow = shadow_dom.attachShadow({mode: 'open'});
+    const shadow = shadow_dom.attachShadow({ mode: 'open' });
     const css = document.createElement("style");
     const js = document.createElement("script");
     const barajaEl = document.createElement("div");
@@ -57,9 +57,9 @@ const pintarCartas = () => {
 
     shadow.appendChild(js);
 
-    for(let carta of baraja){        
+    for (let carta of baraja) {
         const c = document.createElement("div");
-        c.setAttribute("data-id",carta);
+        c.setAttribute("data-id", carta);
         c.classList.add(carta);
         c.classList.add('reverso');
         //c.innerHTML = carta;
@@ -69,7 +69,7 @@ const pintarCartas = () => {
         barajaEl.appendChild(c);
         shadow.appendChild(css);
         shadow.appendChild(barajaEl);
-        
+
     }
 }
 
